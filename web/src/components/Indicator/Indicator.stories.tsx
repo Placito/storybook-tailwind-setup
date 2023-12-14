@@ -22,4 +22,18 @@ export default meta
 
 type Story = StoryObj<typeof Indicator>
 
-export const Primary: Story = {}
+export const Success: Story = {
+  args: {
+    status: 'success',
+  },
+}
+export const Warning: Story = {
+  args: {
+    status: 'warning',
+  },
+}
+export const Error: Story = {
+  args: {
+    status: 'error',
+  },
+}
