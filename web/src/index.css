@@ -13,3 +13,15 @@
 /**
  * END --- SETUP TAILWINDCSS EDIT
  */
+@layeer base {
+
+}
+@layeer components {
+
+}
+@layeer utilities {
+  .center {
+    @apply flex justify-center items-center;
+  }
+
+}
