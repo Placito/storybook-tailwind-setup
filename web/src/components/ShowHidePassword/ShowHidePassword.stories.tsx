@@ -16,7 +16,6 @@ import { Form } from '@redwoodjs/forms'
 
 import ShowHidePassword from './ShowHidePassword'
 
-
 const meta: Meta<typeof ShowHidePassword> = {
   component: ShowHidePassword,
 }
