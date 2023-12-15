@@ -24,7 +24,7 @@ type Story = StoryObj<typeof Avatar>
 
 export const WithImage: Story = {
   args: {
-    avatar: '/images/placeholder_avatar-01.png',
+    avatar: '/images/avatar-01.png',
   },
 }
 export const Letter: Story = {
