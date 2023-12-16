@@ -11,7 +11,7 @@ const Nav = () => {
   return (
     <>
       <div
-        className={`flex h-screen w-[460px] flex-col justify-between bg-supernova px-12 pb-12 pt-[160px] transition-transform duration-450 ${
+        className={`duration-450 flex h-screen w-[460px] flex-col justify-between bg-supernova px-12 pb-12 pt-[160px] transition-transform ${
           isHamburger ? '-translate-x-[120%]' : 'translate-x-0'
         }`}
       >
@@ -43,7 +43,7 @@ const Nav = () => {
         </nav>
       </div>
       <div className="absolute left-8 top-6">
-        <Hamburger isHamburger={isHamburger} toggleNav={toggleNav}/>
+        <Hamburger isHamburger={isHamburger} toggleNav={toggleNav} />
       </div>
     </>
   )
