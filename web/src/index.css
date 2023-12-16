@@ -51,6 +51,18 @@
   .indicator {
     @apply center h-6 w-6 rounded-full border-2
   }
+  .nav-top li{
+    @apply font-condensed tracking-wide text-[72px] uppercase leading-none
+  }
+  .nav-top li a {
+    @apply hover:text-orangeRed
+  }
+  .nav-bottom ul {
+    @apply flex flex-col gap-3
+  }
+  .nav-bottom ul a {
+    @apply hover:text-orangeRed
+  }
 }
 @layer utilities {
   .center {
