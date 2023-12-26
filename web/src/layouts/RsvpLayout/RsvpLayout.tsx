@@ -1,11 +1,20 @@
+import { useState } from 'react'
+
 import Footer from 'src/components/Footer/Footer'
 import Icon from 'src/components/Icon/Icon'
+import ShowHidePassword from 'src/components/ShowHidePassword/ShowHidePassword'
 
-type RsvpLayoutProps = {
-  children?: React.ReactNode
-}
+const RsvpLayout = ({ label, name }) => {
+  const [accept, setAccept] = useState(false)
+  const [decline, setDecline] = useState(false)
 
-const RsvpLayout = ({ children }: RsvpLayoutProps) => {
+  const toogleDecline = () => {
+    setDecline((prevValue) => !prevValue)
+  }
+  const toogleAccept = () => {
+    setAccept((prevValue) => !prevValue)
+  }
+
   return (
     <>
       <main className="min-w-screen min-[1440px]:bg-[lenght:100%_auto] bg[center_top] min-h-screen bg-silverTree bg-auth bg-[length:1440px_auto] bg-no-repeat dark:bg-nileBlue">
@@ -25,7 +34,7 @@ const RsvpLayout = ({ children }: RsvpLayoutProps) => {
           December 24, 2023
         </div>
         <div className="center min-w-screen min-[1440px]:bg-[lenght:100%_auto] bg[center_top] mx-auto flex w-[660px] gap-20">
-          <a href="#" className="cursor-pointer">
+          <button onClick={toogleDecline} className="cursor-pointer">
             <div className="center min-w-screen min-[1440px]:bg-[lenght:100%_auto] bg[center_top] inline-block font-bold">
               <div className="inveted absolute left-[32%] z-50 border-white bg-orangeRed text-white">
                 <Icon id="thumbsDown" size={42} />
@@ -35,17 +44,35 @@ const RsvpLayout = ({ children }: RsvpLayoutProps) => {
                 <p>Decline</p>
               </div>
             </div>
-          </a>
-          <a href="#" className="cursor-pointer">
+          </button>
+          {decline && (
+            <>
+              <div className="mx-auto w-[660px] text-5xl uppercase text-white">
+                {' '}
+                -- Thanks --
+              </div>
+              <div className="center mx-auto w-[660px] text-5xl font-bold uppercase text-white">
+                you&apos;ll be missed
+              </div>
+            </>
+          )}
+          <button onClick={toogleAccept} className="cursor-pointer">
             <div className="center min-w-screen min-[1440px]:bg-[lenght:100%_auto] bg[center_top] inline-block font-bold">
               <div className="inveted absolute left-[49%] z-50 border-white bg-spanishGreen text-white">
                 <Icon id="thumbsUp" size={42} />
               </div>
               <p className="z-30 bg-white px-8 py-5">I&apos;ll Be There!</p>
             </div>
-          </a>
+          </button>
         </div>
-        {children}
+        {accept && (
+          <>
+            <div className="mx-auto w-[660px] text-5xl uppercase text-white">
+              awesome
+            </div>
+            <ShowHidePassword label={label} name={name} />
+          </>
+        )}
       </main>
       <Footer />
     </>
